@@ -13,13 +13,14 @@ jobs:
             # Set up Java
             sudo apt install -y openjdk-17-jdk nodejs;
             # Set up NodeJS
-            sudo apt install -y nodejs;
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash;
+            \. "$HOME/.nvm/nvm.sh";
+            nvm install 23;
             # Set up Android SDK
             sudo apt install -y android-sdk;
       - run:
-          name: "Install NPM and NPX"
+          name: "Install NPX"
           command: |
-            sudo apt install -y npm;
             sudo npm install -g npx;
       - run:
           name: "Compile HCB Mobile"
