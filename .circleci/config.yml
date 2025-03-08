@@ -22,9 +22,6 @@ jobs:
             sudo apt install -y npm;
             npm install -g npx;
       - run:
-          name: "Clone and checkout repository"
-          command: "git clone https://github.com/hackclub/hcb-mobile"
-      - run:
           name: "Compile HCB Mobile"
           command: "npm i; npx expo prebuild; npx react-native build-android --mode=release"
 
