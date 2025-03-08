@@ -24,8 +24,21 @@ jobs:
             sudo apt install -y npm;
             sudo npm install -g npx;
       - run:
-          name: "Compile HCB Mobile"
-          command: "npm i; npx expo prebuild; npx react-native build-android --mode=release"
+          name: "Accept All SDK Licenses"
+          command: "y | sdkmanager --licenses"
+      - run:
+          name: "Install Runtime & Compilation Dependencies"
+          command: "npm i"
+      - run:
+          name: "Compile HCB Mobile - PREBUILD"
+          command: "npx expo prebuild"
+      - run:
+          name: "Compile HCB Mobile - ARTIFACTS"
+          command: "cd android; ./gradlew assemble; cd .."
+
+      - store_artifacts:
+          path: android/
+          name: artifact.apk
 
 workflows:
   android-build:
