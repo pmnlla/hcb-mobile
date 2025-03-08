@@ -23,7 +23,6 @@
     "@fortawesome/react-native-fontawesome": "^0.3.2",
     "@hackclub/hackclub-icons-rn": "github:thedev132/hackclub-icons-rn",
     "@react-native-async-storage/async-storage": "1.23.1",
-    "@react-native-community/cli": "latest",
     "@react-native-community/geolocation": "^3.3.0",
     "@react-native-menu/menu": "^1.1.6",
     "@react-native-picker/picker": "2.9.0",
@@ -80,6 +79,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
+    "@react-native-community/cli": "latest",
     "@tsconfig/react-native": "^3.0.2",
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.198",
