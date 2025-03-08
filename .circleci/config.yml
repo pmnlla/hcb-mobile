@@ -10,11 +10,11 @@ jobs:
           name: "Set up NodeJS & Java"
           command: |
             # Set up Java
-            apt install -y openjdk-17-jdk nodejs;
+            sudo apt install -y openjdk-17-jdk nodejs;
             # Set up NodeJS
-            apt install -y nodejs;
+            sudo apt install -y nodejs;
             # Set up Android SDK
-            apt install -y android-sdk;
+            sudo apt install -y android-sdk;
             sdkmanager 'platform-tools' 'platforms;android-33'
       - run:
           name: "Clone and checkout repository"
