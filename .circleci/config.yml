@@ -26,7 +26,7 @@ jobs:
           command: "git clone https://github.com/hackclub/hcb-mobile"
       - run:
           name: "Compile HCB Mobile"
-          command: "npm i; npm i -g npx; npx expo prebuild; npx react-native build-android --mode=release"
+          command: "npm i; npx expo prebuild; npx react-native build-android --mode=release"
 
 workflows:
   android-build:
