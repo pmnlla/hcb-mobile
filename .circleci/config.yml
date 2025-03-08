@@ -16,7 +16,6 @@ jobs:
             sudo apt install -y nodejs;
             # Set up Android SDK
             sudo apt install -y android-sdk;
-            sdkmanager "platform-tools" "platforms;android-33"
       - run:
           name: "Clone and checkout repository"
           command: "git clone https://github.com/hackclub/hcb-mobile"
