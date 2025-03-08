@@ -20,7 +20,7 @@ jobs:
           name: "Install NPM and NPX"
           command: |
             sudo apt install -y npm;
-            npm install -g npx;
+            sudo npm install -g npx;
       - run:
           name: "Compile HCB Mobile"
           command: "npm i; npx expo prebuild; npx react-native build-android --mode=release"
