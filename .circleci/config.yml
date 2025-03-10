@@ -15,10 +15,6 @@ jobs:
             # Set up Android SDK
             sudo apt install -y android-sdk;
       - run:
-          name: "Install NPM-based dependencies"
-          command: |
-            sudo npm install -g npx;
-      - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
       - run:
