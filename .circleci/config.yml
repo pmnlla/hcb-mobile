@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Set up NodeJS & Java"
+          name: "Set up DPKG-based dependencies"
           command: |
             sudo apt update;
             # Set up Java
@@ -18,13 +18,13 @@ jobs:
             nvm install 23;
             # Set up Android SDK
             sudo apt install -y android-sdk;
-            # Set up build tools
-            sudo npm i -g bundletools
       - run:
-          name: "Install NPX"
+          name: "Install NPM-based dependencies"
           command: |
             sudo apt install -y npm;
             sudo npm install -g npx;
+            # Set up build tools
+            sudo npm i -g bundletools;
       - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
