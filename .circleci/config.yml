@@ -19,7 +19,7 @@ jobs:
             # Set up Android SDK
             sudo apt install -y android-sdk;
             # Set up build tools
-            sudo apt install bundletools
+            sudo npm i -g bundletools
       - run:
           name: "Install NPX"
           command: |
