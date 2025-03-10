@@ -24,9 +24,6 @@ jobs:
             sudo apt install -y npm;
             sudo npm install -g npx;
       - run:
-          name: "Accept All SDK Licenses"
-          command: "y | sdkmanager --licenses"
-      - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
       - run:
