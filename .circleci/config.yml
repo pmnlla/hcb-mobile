@@ -18,6 +18,8 @@ jobs:
             nvm install 23;
             # Set up Android SDK
             sudo apt install -y android-sdk;
+            # Set up build tools
+            sudo apt install bundletools
       - run:
           name: "Install NPX"
           command: |
@@ -31,11 +33,17 @@ jobs:
           command: "npx expo prebuild"
       - run:
           name: "Compile HCB Mobile - ARTIFACTS"
-          command: "cd android; ./gradlew assemble; cd .."
+          command: "npx react-native build-android --mode=release"
+      - run:
+          name: "Unpack Keystore"
+          command: "echo ($KEYSTORE) | base64 -d > uploadkey.keystore"
+      - run:
+          name: "Extract and sign APK"
+          command: 'bundletool build-apks --bundle=android/app/build/outputs/bundle/release/app-release.aab --outputs=out.apks--mode=universal --ks uploadkey.keystore --ks-key-alias primary-lilylab --ks-pass=pass:$SIGNING_KEY_DECRYPTOR'
 
       - store_artifacts:
-          path: android/
-          name: artifact.apk
+          path: out.apks
+          name: out.zip
 
 workflows:
   android-build:
