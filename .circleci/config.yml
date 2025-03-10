@@ -23,8 +23,6 @@ jobs:
           command: |
             sudo apt install -y npm;
             sudo npm install -g npx;
-            # Set up build tools
-            sudo npm i -g bundletools;
       - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
