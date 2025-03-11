@@ -24,7 +24,7 @@ jobs:
             chmod +x update.sh; ./update.sh
             echo "
               sudo chmod -R 777 /usr/lib/android-sdk; yes | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses; exit 0" > accept.sh;
-            chmod +x accept.sh; ./accept.sh
+            chmod +x accept.sh; ./accept.sh;
       - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
