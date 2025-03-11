@@ -20,7 +20,9 @@ jobs:
             echo "
               wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip;
               unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools;
-              mv cmdline-tools /usr/lib/android-sdk/" | sudo bash; yes | sudo /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
+              mv cmdline-tools /usr/lib/android-sdk/" | sudo bash; 
+              yes | sudo /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses;
+              exit 0
       - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
