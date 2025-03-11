@@ -15,6 +15,13 @@ jobs:
             # Set up Android SDK
             sudo apt install -y android-sdk;
       - run:
+          name: "Install sdkmanager & Accept Licenses"
+          command: |
+            echo "
+              wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip;
+              unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools;
+              mv cmdline-tools /usr/lib/android-sdk/" | sudo bash; yes | sudo /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
+      - run:
           name: "Install Runtime & Compilation Dependencies"
           command: "npm i"
       - run:
