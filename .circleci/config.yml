@@ -33,6 +33,7 @@ jobs:
           command: "npx expo prebuild"
       - run:
           name: "Compile HCB Mobile - ARTIFACTS"
+          no_output_timeout: 30m
           command: "./gradlew assembleRelease"
           working_directory: "android"
       - store_artifacts:
